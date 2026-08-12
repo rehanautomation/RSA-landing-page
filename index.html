@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>[[PAGE TITLE — from copy deck: GRS landing page meta title]]</title>
-<meta name="description" content="[[META DESCRIPTION — from copy deck, ~155 characters]]">
+<title>Growth Readiness Score&trade; | Rock Solid Automation</title>
+<meta name="description" content="The Growth Readiness Score&trade; scores your business across the five areas that decide whether you grow or stall. Fifteen questions. Around five minutes.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -99,6 +99,7 @@ ul{padding:0;list-style:none;}
 .head-block .h2{max-width:24ch;margin:0 auto;}
 .head-block .intro{max-width:760px;margin:var(--s2) auto 0;color:var(--grey);}
 .head-block .h2--spaced{margin-top:var(--s2);}
+.head-block .h2--wide{max-width:800px;} /* S4 section override, per spec S3.4 */
 .head-block .intro--narrow{max-width:740px;}
 
 /* ============================================================
@@ -294,9 +295,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
 .footer__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s5);}
 .footer__grid,.footer__bottom{font-size:var(--f-small);line-height:1.7;color:var(--border);}
 .footer__logo{width:160px;}
-.footer__partner{margin-top:var(--s2);color:var(--lightblue);}
 .footer__blurb{margin-top:var(--s2);}
-.footer__label{color:var(--grey);}
+.footer__partner{color:var(--lightblue);}
 .footer__divider{height:1px;background:rgba(109,110,112,0.5);margin-top:var(--s5);}
 .footer__bottom{margin-top:var(--s3);text-align:center;font-size:14px;color:var(--grey);}
 
@@ -325,6 +325,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
   .form{grid-template-columns:1fr;}
 
   .proof__grid{grid-template-columns:1fr 1fr;row-gap:var(--s4);}
+  .proof__cell{padding:0 var(--s1);}
   .proof__cell + .proof__cell{border-left:0;}
 
   .grid-3,.grid-2{grid-template-columns:1fr;}
@@ -344,7 +345,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
 <header class="header">
   <div class="wrap header__inner">
     <!-- PLACEHOLDER LOGO — replace src with the Rock Solid Automation logo asset, 180px wide -->
-    <img class="header__logo" alt="[[LOGO — Rock Solid Automation]]"
+    <img class="header__logo" alt="Rock Solid Automation"
          src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='40'%3E%3Crect width='179' height='39' x='.5' y='.5' fill='none' stroke='%23D1D3D4'/%3E%3Ctext x='90' y='24' font-family='Barlow, sans-serif' font-size='11' letter-spacing='1.5' fill='%236D6E70' text-anchor='middle'%3ELOGO PLACEHOLDER%3C/text%3E%3C/svg%3E">
     <a class="header__phone" href="tel:+61423505938">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
@@ -360,71 +361,96 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
   <div class="wrap hero__grid">
 
     <div class="hero__text">
-      <p class="eyebrow t-lightblue">[[EYEBROW — from copy deck, uppercase]]</p>
-      <h1 class="h1 t-white hero__h1">[[H1 — hero headline from copy deck, verbatim]]</h1>
+      <p class="eyebrow t-lightblue">FREE BUSINESS ASSESSMENT</p>
+      <h1 class="h1 t-white hero__h1">Find out what is actually holding your business back.</h1>
 
       <!-- SCORE-SCALE MOTIF · placement 1 of 3 -->
       <div class="scale" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
 
-      <p class="body-lg t-onnavy hero__sub">[[HERO SUBHEAD — from copy deck, verbatim. One or two sentences.]]</p>
+      <p class="body-lg t-onnavy hero__sub">The Growth Readiness Score&trade; scores your business across the five areas that decide whether you grow or stall. Fifteen questions. Around five minutes. A personalised report, straight away.</p>
 
       <ul class="hero__ticks">
         <li>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-          <span>[[TRUST TICK 1 — from copy deck]]</span>
+          <span>No sales meeting required</span>
         </li>
         <li>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-          <span>[[TRUST TICK 2 — from copy deck]]</span>
+          <span>Personalised to your business, not a generic PDF</span>
         </li>
         <li>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-          <span>[[TRUST TICK 3 — from copy deck]]</span>
+          <span>Built by operators, not software vendors</span>
         </li>
       </ul>
 
-      <p class="small hero__micro">[[HERO MICRO-LINE — from copy deck, e.g. time-to-complete / no-obligation note]]</p>
+      <p class="small hero__micro">Used by Australian business owners who would rather know than guess.</p>
 
       <!-- Mobile-only CTA: the form falls below the fold on small screens -->
-      <a class="btn hero__btn-mobile" href="#form">[[CTA BUTTON LABEL — identical on all three buttons]]</a>
+      <a class="btn hero__btn-mobile" href="#form">START MY GROWTH SCORE</a>
     </div>
 
     <div class="form-card" id="form">
-      <h2 class="form-card__title">[[FORM CARD HEADING — from copy deck]]</h2>
-      <p class="small form-card__sub">[[FORM CARD SUBHEAD — from copy deck]]</p>
+      <h2 class="form-card__title">Start your Growth Readiness Score&trade;</h2>
+      <p class="small form-card__sub">Your details first, then fifteen quick questions. Your score appears the moment you finish.</p>
 
-      <!-- Field layout below follows the Half/Full pattern in the copy deck.
-           Confirm field names/labels against the deck before handoff to GHL. -->
       <form class="form" action="#" method="post" novalidate>
         <div class="field">
-          <label for="first-name">[[FIELD LABEL — First name]]</label>
-          <input id="first-name" name="first-name" type="text" autocomplete="given-name">
+          <label for="first-name">First Name</label>
+          <input id="first-name" name="first-name" type="text" autocomplete="given-name" required>
         </div>
         <div class="field">
-          <label for="last-name">[[FIELD LABEL — Last name]]</label>
-          <input id="last-name" name="last-name" type="text" autocomplete="family-name">
+          <label for="last-name">Last Name</label>
+          <input id="last-name" name="last-name" type="text" autocomplete="family-name" required>
         </div>
+
         <div class="field field--full">
-          <label for="business">[[FIELD LABEL — Business name]]</label>
-          <input id="business" name="business" type="text" autocomplete="organization">
+          <label for="email">Work Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required>
+        </div>
+
+        <div class="field field--full">
+          <label for="mobile">Mobile Number</label>
+          <input id="mobile" name="mobile" type="tel" autocomplete="tel" required>
+        </div>
+
+        <div class="field field--full">
+          <label for="business">Business Name</label>
+          <input id="business" name="business" type="text" autocomplete="organization" required>
+        </div>
+
+        <div class="field">
+          <label for="position">Your Position</label>
+          <input id="position" name="position" type="text" autocomplete="organization-title" required>
         </div>
         <div class="field">
-          <label for="email">[[FIELD LABEL — Email]]</label>
-          <input id="email" name="email" type="email" autocomplete="email">
+          <label for="industry">Industry</label>
+          <!-- OPTION LIST NOT SUPPLIED IN THE COPY DECK — add before build -->
+          <select id="industry" name="industry" required>
+            <option value="">Please select</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="employees">Number of Employees</label>
+          <!-- OPTION LIST NOT SUPPLIED IN THE COPY DECK — add before build -->
+          <select id="employees" name="employees" required>
+            <option value="">Please select</option>
+          </select>
         </div>
         <div class="field">
-          <label for="phone">[[FIELD LABEL — Phone]]</label>
-          <input id="phone" name="phone" type="tel" autocomplete="tel">
+          <label for="location">Business Location</label>
+          <input id="location" name="location" type="text" autocomplete="address-level2" required>
         </div>
 
         <div class="consent">
-          <input id="consent" name="consent" type="checkbox">
-          <label for="consent">[[CONSENT LINE — from copy deck, verbatim]]</label>
+          <input id="consent" name="consent" type="checkbox" required>
+          <label for="consent">I agree to receive my Growth Readiness Score results and related communications from Rock Solid Automation by email and SMS. You can unsubscribe at any time.</label>
         </div>
 
         <div class="form__submit">
-          <button class="btn btn--block" type="submit">[[CTA BUTTON LABEL — identical on all three buttons]]</button>
-          <p class="small form__micro">[[UNDER-BUTTON MICRO-COPY — from copy deck]]</p>
+          <button class="btn btn--block" type="submit">START MY GROWTH SCORE</button>
+          <p class="small form__micro">Takes about five minutes. Your details stay with us and are never sold.</p>
         </div>
       </form>
     </div>
@@ -438,20 +464,20 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
 <section class="band--blue proof">
   <div class="wrap proof__grid">
     <div class="proof__cell">
-      <p class="stat">[[STAT 1]]</p>
-      <p class="stat-label">[[STAT LABEL 1]]</p>
+      <p class="stat">15</p>
+      <p class="stat-label">QUESTIONS</p>
     </div>
     <div class="proof__cell">
-      <p class="stat">[[STAT 2]]</p>
-      <p class="stat-label">[[STAT LABEL 2]]</p>
+      <p class="stat">5 min</p>
+      <p class="stat-label">TO COMPLETE</p>
     </div>
     <div class="proof__cell">
-      <p class="stat">[[STAT 3]]</p>
-      <p class="stat-label">[[STAT LABEL 3]]</p>
+      <p class="stat">5</p>
+      <p class="stat-label">BUSINESS AREAS SCORED</p>
     </div>
     <div class="proof__cell">
-      <p class="stat">[[STAT 4]]</p>
-      <p class="stat-label">[[STAT LABEL 4]]</p>
+      <p class="stat">Instant</p>
+      <p class="stat-label">PERSONALISED REPORT</p>
     </div>
   </div>
 </section>
@@ -462,31 +488,31 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
 <section class="band band--white">
   <div class="wrap">
     <div class="head-block">
-      <h2 class="h2 t-navy">[[S4 H2 — the problem headline]]</h2>
-      <p class="intro">[[S4 INTRO — one or two sentences, from copy deck]]</p>
+      <h2 class="h2 t-navy h2--wide">Most businesses do not have a growth problem. They have a systems problem.</h2>
+      <p class="intro">Revenue is rarely lost in one dramatic moment. It leaks quietly, through the gaps nobody has time to look at. Here is where it usually goes.</p>
     </div>
 
     <div class="grid-3">
       <article class="card card--bordered">
         <svg class="card__icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="23" y1="1" x2="17" y2="7"/><line x1="17" y1="1" x2="23" y2="7"/><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        <h3 class="h3">[[S4 CARD 1 HEADING]]</h3>
-        <p class="card__body">[[S4 CARD 1 BODY — from copy deck]]</p>
+        <h3 class="h3">Enquiries that go cold</h3>
+        <p class="card__body">Someone calls while you are with a customer. They leave a message, or they do not. By the time you call back, they have already booked with whoever answered first.</p>
       </article>
 
       <article class="card card--bordered">
         <svg class="card__icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-        <h3 class="h3">[[S4 CARD 2 HEADING]]</h3>
-        <p class="card__body">[[S4 CARD 2 BODY — from copy deck]]</p>
+        <h3 class="h3">Good leads that never get followed up</h3>
+        <p class="card__body">Not because your team is lazy. Because follow-up lives in someone's head, someone's inbox and someone's notebook, and none of those three talk to each other.</p>
       </article>
 
       <article class="card card--bordered">
         <svg class="card__icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
-        <h3 class="h3">[[S4 CARD 3 HEADING]]</h3>
-        <p class="card__body">[[S4 CARD 3 BODY — from copy deck]]</p>
+        <h3 class="h3">Hours spent on work that should run itself</h3>
+        <p class="card__body">Rekeying the same details. Chasing the same information. Sending the same message you sent last week. It is not strategic work, but it fills the day.</p>
       </article>
     </div>
 
-    <p class="closing">[[S4 CLOSING LINE — from copy deck]]</p>
+    <p class="closing">The hard part is not fixing these. The hard part is knowing which one is costing you the most right now.</p>
   </div>
 </section>
 
@@ -496,32 +522,32 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
 <section class="band band--wash">
   <div class="wrap">
     <div class="head-block">
-      <p class="eyebrow t-blue">[[S5 EYEBROW]]</p>
-      <h2 class="h2 t-navy h2--spaced">[[S5 H2 — what you get headline]]</h2>
-      <p class="intro intro--narrow">[[S5 INTRO — from copy deck]]</p>
+      <p class="eyebrow t-blue">YOUR REPORT INCLUDES</p>
+      <h2 class="h2 t-navy h2--spaced">A clear read on your business, in five minutes.</h2>
+      <p class="intro intro--narrow">This is not a lead magnet with your name pasted on the front. Every answer you give changes what your report says.</p>
     </div>
 
     <div class="grid-2">
       <article class="card card--shadow">
-        <h3 class="h3 t-navy">[[S5 CARD 1 HEADING]]</h3>
-        <p class="card__body">[[S5 CARD 1 BODY — from copy deck]]</p>
+        <h3 class="h3 t-navy">Your score out of 150</h3>
+        <p class="card__body">One number that tells you how ready your business actually is to grow, measured against the same standard we use with clients.</p>
       </article>
 
       <article class="card card--shadow">
         <h3 class="h3 t-navy">Your readiness level</h3>
         <!-- SCORE-SCALE MOTIF · placement 2 of 3 (card scale) -->
         <div class="scale scale--card card__scale" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
-        <p class="card__body">[[S5 CARD 2 BODY — the four bands: Restricted, Developing, Capable, Ready. Use copy deck wording verbatim.]]</p>
+        <p class="card__body">Growth Ready, Growth Capable, Growth Developing or Growth Restricted. Where you sit determines what you should do next, and in what order.</p>
       </article>
 
       <article class="card card--shadow">
-        <h3 class="h3 t-navy">[[S5 CARD 3 HEADING]]</h3>
-        <p class="card__body">[[S5 CARD 3 BODY — from copy deck]]</p>
+        <h3 class="h3 t-navy">Your five category scores</h3>
+        <p class="card__body">Customer Experience. Sales and Lead Management. Operations and Efficiency. Marketing and Growth. Technology and Automation. Scored individually, so strengths and gaps are both visible.</p>
       </article>
 
       <article class="card card--shadow">
-        <h3 class="h3 t-navy">[[S5 CARD 4 HEADING]]</h3>
-        <p class="card__body">[[S5 CARD 4 BODY — from copy deck]]</p>
+        <h3 class="h3 t-navy">Your single biggest opportunity</h3>
+        <p class="card__body">The one area holding the rest back, and the practical next step for fixing it. Most owners find this is not the area they expected.</p>
       </article>
     </div>
   </div>
@@ -533,28 +559,28 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
 <section class="band band--white">
   <div class="wrap">
     <div class="head-block">
-      <h2 class="h2 t-navy">[[S6 H2 — how it works headline]]</h2>
+      <h2 class="h2 t-navy">Three steps. No meeting in any of them.</h2>
     </div>
 
     <div class="steps">
       <article class="step">
         <p class="step-num">01</p>
-        <h3 class="h3">[[S6 STEP 1 HEADING]]</h3>
-        <p class="step__body">[[S6 STEP 1 BODY — from copy deck]]</p>
+        <h3 class="h3">Tell us who you are</h3>
+        <p class="step__body">Nine quick details so we can personalise your report and score you against businesses of a similar size and sector.</p>
       </article>
       <article class="step">
         <p class="step-num">02</p>
-        <h3 class="h3">[[S6 STEP 2 HEADING]]</h3>
-        <p class="step__body">[[S6 STEP 2 BODY — from copy deck]]</p>
+        <h3 class="h3">Answer fifteen questions</h3>
+        <p class="step__body">Plain business questions about how your business runs today. No technical knowledge needed. Most people finish in under five minutes.</p>
       </article>
       <article class="step">
         <p class="step-num">03</p>
-        <h3 class="h3">[[S6 STEP 3 HEADING]]</h3>
-        <p class="step__body">[[S6 STEP 3 BODY — from copy deck]]</p>
+        <h3 class="h3">Get your score and your report</h3>
+        <p class="step__body">Delivered immediately, then a short series of emails explaining what your results actually mean for a business like yours.</p>
       </article>
     </div>
 
-    <p class="steps-note">[[S6 LINE BENEATH STEPS — from copy deck]]</p>
+    <p class="steps-note">If you want to talk it through afterwards, you can book a session. If you do not, keep the report. It is yours either way.</p>
   </div>
 </section>
 
@@ -565,38 +591,38 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
   <div class="wrap diff__grid">
 
     <div>
-      <p class="eyebrow t-lightblue">[[S7 EYEBROW]]</p>
-      <h2 class="h2 diff__h2">[[S7 H2 — why this is different]]</h2>
+      <p class="eyebrow t-lightblue">WHY WE DO IT THIS WAY</p>
+      <h2 class="h2 diff__h2">Most agencies ask you to book a call. We would rather give you something useful first.</h2>
       <div class="diff__copy">
-        <p>[[S7 PARAGRAPH 1 — from copy deck]]</p>
-        <p>[[S7 PARAGRAPH 2 — from copy deck]]</p>
-        <p>[[S7 PARAGRAPH 3 — from copy deck]]</p>
+        <p>A sales meeting benefits the person selling. An honest assessment of your business benefits you, whether or not we ever work together.</p>
+        <p>So we built the Growth Readiness Score&trade; as the first piece of consulting we do, not the last step before a pitch. It is the same diagnostic framework we use with paying clients, made available before anyone asks you for anything.</p>
+        <p>If your results show you do not need us yet, we will tell you that. We would rather be the people you call in eighteen months than the people who sold you something in eighteen minutes.</p>
       </div>
     </div>
 
     <div class="card--navy">
-      <p class="card--navy__title">[[S7 CARD HEADING — e.g. the "we are not" framing line]]</p>
+      <p class="card--navy__title">We are not a software company.</p>
 
       <ul class="not-list">
         <li>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-          <span>[[WE ARE NOT — item 1]]</span>
+          <span>A chatbot company</span>
         </li>
         <li>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-          <span>[[WE ARE NOT — item 2]]</span>
+          <span>A website agency</span>
         </li>
         <li>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-          <span>[[WE ARE NOT — item 3]]</span>
+          <span>A software reseller</span>
         </li>
         <li>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-          <span>[[WE ARE NOT — item 4]]</span>
+          <span>A digital marketing agency</span>
         </li>
         <li>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-          <span>[[WE ARE NOT — item 5]]</span>
+          <span>An IT support company</span>
         </li>
       </ul>
 
@@ -607,7 +633,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
         <span>A Business Growth Partner</span>
       </div>
 
-      <p class="card--navy__close">[[S7 CLOSING LINE — the single italic line in the copy deck]]</p>
+      <p class="card--navy__close">Technology is only the means. The outcome is a business that is easier to run.</p>
     </div>
 
   </div>
@@ -619,48 +645,56 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
 <section class="band band--white">
   <div class="wrap">
     <div class="head-block">
-      <h2 class="h2 t-navy">[[S8 H2 — FAQ headline]]</h2>
+      <h2 class="h2 t-navy">Before you start</h2>
     </div>
 
     <div class="faq">
       <details class="faq__item" open>
         <summary class="faq__q">
-          [[FAQ QUESTION 1]]
+          Is it actually free?
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
         </summary>
-        <p class="faq__a">[[FAQ ANSWER 1 — from copy deck]]</p>
+        <p class="faq__a">Yes. There is no cost, no card and no obligation. The assessment and your report are free whether you become a client or not.</p>
       </details>
 
       <details class="faq__item">
         <summary class="faq__q">
-          [[FAQ QUESTION 2]]
+          How long does it take?
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
         </summary>
-        <p class="faq__a">[[FAQ ANSWER 2 — from copy deck]]</p>
+        <p class="faq__a">Around five minutes. Nine details, then fifteen multiple-choice questions. There is nothing to write and nothing to prepare.</p>
       </details>
 
       <details class="faq__item">
         <summary class="faq__q">
-          [[FAQ QUESTION 3]]
+          Will someone call and try to sell me something?
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
         </summary>
-        <p class="faq__a">[[FAQ ANSWER 3 — from copy deck]]</p>
+        <p class="faq__a">No. Your report arrives automatically, followed by a short series of emails explaining your results. If you want to speak to someone, you book that yourself. We do not cold call people who complete the assessment.</p>
       </details>
 
       <details class="faq__item">
         <summary class="faq__q">
-          [[FAQ QUESTION 4]]
+          What do I actually receive?
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
         </summary>
-        <p class="faq__a">[[FAQ ANSWER 4 — from copy deck]]</p>
+        <p class="faq__a">Your overall score out of 150, your readiness level, individual scores across five business areas, and a recommendation on the single highest-value area to address first.</p>
       </details>
 
       <details class="faq__item">
         <summary class="faq__q">
-          [[FAQ QUESTION 5]]
+          Do I need to understand AI or automation?
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
         </summary>
-        <p class="faq__a">[[FAQ ANSWER 5 — from copy deck]]</p>
+        <p class="faq__a">Not at all. Every question is about how your business runs day to day. If you can describe how a customer enquiry gets handled, you can complete this.</p>
+      </details>
+
+      <details class="faq__item">
+        <summary class="faq__q">
+          What happens to my information?
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </summary>
+        <p class="faq__a">It is stored securely, used to produce your report and to contact you about your results. We never sell or share your details. You can unsubscribe at any time.</p>
       </details>
     </div>
   </div>
@@ -675,10 +709,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
       <!-- SCORE-SCALE MOTIF · placement 3 of 3 (white opacity ramp) -->
       <div class="scale scale--center scale--invert" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
 
-      <h2 class="h2">[[S9 H2 — final CTA headline]]</h2>
-      <p class="final__body">[[S9 BODY — from copy deck]]</p>
-      <a class="btn btn--invert" href="#form">[[CTA BUTTON LABEL — identical on all three buttons]]</a>
-      <p class="small final__micro">[[S9 MICRO-LINE — from copy deck]]</p>
+      <h2 class="h2">Five minutes now, or another quarter of guessing.</h2>
+      <p class="final__body">You already know something in the business could run better. The Growth Readiness Score&trade; tells you which thing, and what to do about it first.</p>
+      <a class="btn btn--invert" href="#form">START MY GROWTH SCORE</a>
+      <p class="small final__micro">Free. No meeting. Your report arrives the moment you finish.</p>
     </div>
   </div>
 </section>
@@ -692,30 +726,31 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
 
       <div>
         <!-- PLACEHOLDER LOGO — replace src with the Rock Solid Automation reversed logo, 160px wide -->
-        <img class="footer__logo" alt="[[LOGO — Rock Solid Automation]]"
+        <img class="footer__logo" alt="Rock Solid Automation"
              src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='36'%3E%3Crect width='159' height='35' x='.5' y='.5' fill='none' stroke='%236D6E70'/%3E%3Ctext x='80' y='22' font-family='Barlow, sans-serif' font-size='10' letter-spacing='1.5' fill='%23D1D3D4' text-anchor='middle'%3ELOGO PLACEHOLDER%3C/text%3E%3C/svg%3E">
+        <p class="footer__blurb">Rock Solid Automation</p>
         <p class="footer__partner">Business Growth Partner</p>
-        <p class="footer__blurb">[[FOOTER BLURB — one or two lines from copy deck]]</p>
       </div>
 
       <div>
-        <p class="footer__label">[[FOOTER COLUMN 2 LABEL — e.g. Contact]]</p>
+        <p>Unit 3, 71 Deakin Ave</p>
+        <p>Mildura VIC 3500</p>
+        <p>Australia</p>
+      </div>
+
+      <div>
         <p>0423 505 938</p>
-        <p>[[FOOTER EMAIL ADDRESS]]</p>
-        <p>[[FOOTER LOCATION / SERVICE AREA]]</p>
-      </div>
-
-      <div>
-        <p class="footer__label">[[FOOTER COLUMN 3 LABEL — e.g. Legal]]</p>
-        <p>[[ABN OR BUSINESS DETAILS]]</p>
-        <p><a class="link" href="#">Privacy Policy</a></p>
+        <p>support@rocksolidautomation.com.au</p>
+        <!-- OPEN ITEM 4: the support@ mailbox does not exist yet, so this is plain text, not a mailto link -->
+        <p><a class="link" href="https://www.rocksolidautomation.com.au">www.rocksolidautomation.com.au</a></p>
       </div>
 
     </div>
 
     <div class="footer__divider"></div>
 
-    <p class="footer__bottom">© [[YEAR]] [[LEGAL ENTITY NAME]]. [[RIGHTS LINE]] · <a class="link" href="#">Privacy Policy</a></p>
+    <!-- OPEN ITEM 3: privacy policy URL still to be supplied -->
+    <p class="footer__bottom">© 2026 Rock Solid Automation. All rights reserved. · <a class="link" href="#">Privacy Policy</a></p>
   </div>
 </footer>
 
