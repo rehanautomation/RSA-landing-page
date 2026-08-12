@@ -240,6 +240,13 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
 .card__scale{margin-top:12px;}
 .card--shadow .card__scale + .card__body{margin-top:12px;}
 
+/* S5 card 4 — navy highlight card. Same radius and padding as its
+   neighbours, no shadow and no border: the fill carries it. */
+.card--fill{background:var(--navy);}
+.card--fill .h3{margin-top:0;color:var(--white);}
+.card--fill .card__body{color:var(--on-navy);}
+.card__scale--below{margin-top:var(--s3);}
+
 /* S5 card 1 — typographic score treatment (a dial is not native in GHL) */
 .score-num{font-size:var(--f-score);font-weight:700;line-height:1;letter-spacing:-1px;color:var(--blue);margin-top:12px;}
 /* S5 card 3 — five category names as a mini list */
@@ -581,9 +588,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
         </ul>
       </article>
 
-      <article class="card card--shadow">
-        <h3 class="h3 t-navy">Your single biggest opportunity</h3>
+      <article class="card card--fill">
+        <h3 class="h3">Your single biggest opportunity</h3>
         <p class="card__body">The one area holding the rest back, and the first step to fix it.</p>
+        <div class="scale scale--card card__scale card__scale--below" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
       </article>
     </div>
   </div>
