@@ -167,7 +167,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
 /* ============================================================
    S2 — HERO · navy
    ============================================================ */
-.hero__grid{display:grid;grid-template-columns:55% 45%;gap:var(--s5);align-items:start;}
+/* 1fr 1fr, not 50% 50%: percentage tracks resolve against the full content
+   box, so the columns plus the gap overflowed the 1140px column and pushed
+   the card 24px past every other section's right edge. */
+.hero__grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--s5);align-items:start;}
 .hero__sub{max-width:520px;margin-top:var(--s3);}
 .hero .scale{margin-top:var(--s3);}
 .hero__h1{margin-top:var(--s2);}
