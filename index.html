@@ -144,6 +144,7 @@ ul{padding:0;list-style:none;}
   transition:background-color 150ms ease;
 }
 .btn:hover{background:var(--blue-hover);}
+.btn--block{display:block;width:100%;}
 .btn--invert{background:var(--white);color:var(--navy);}
 .btn--invert:hover{background:var(--wash);}
 
@@ -168,10 +169,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
    S2 — HERO · navy
    ============================================================ */
 /* Fractional units, not percentages: percentage tracks resolve against the
-   full content box, so the columns plus the gap overflowed the 1140px column.
-   The 38/62 ratio gives the form column enough width to clear the embedded
-   form's own two-column breakpoint. */
-.hero__grid{display:grid;grid-template-columns:38fr 62fr;gap:var(--s5);align-items:start;}
+   full content box, so the columns plus the gap overflowed the 1140px column
+   and pushed the card past every other section's right edge. */
+.hero__grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--s5);align-items:start;}
 .hero__sub{max-width:520px;margin-top:var(--s3);}
 .hero .scale{margin-top:var(--s3);}
 .hero__h1{margin-top:var(--s2);}
@@ -182,26 +182,36 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
 .hero__btn-mobile{display:none;}
 
 /* Form card — the single shadow exception */
-/* No padding on the card itself: the embedded form needs every pixel of
-   width it can get to stay in its two-column layout, so the iframe runs
-   edge to edge and only the text around it is inset. overflow:hidden lets
-   the card's radius clip the iframe's square corners. */
 .form-card{
   background:var(--white);
   border-radius:var(--r-card);
-  padding:0;
-  overflow:hidden;
+  padding:40px;
   box-shadow:0 8px 32px rgba(0,0,0,0.25);
 }
-.form-card__head{padding:var(--s4) var(--s4) 0;}
 .form-card__title{font-size:24px;font-weight:600;line-height:1.3;color:var(--navy);}
 .form-card__sub{margin-top:var(--s1);color:var(--grey);}
-/* The form itself is a GoHighLevel embed. form_embed.js resizes the iframe
-   to its content once loaded; the height below is the pre-load value and
-   matches the embed's own data-height. */
-.form-embed{margin-top:var(--s3);}
-.form-embed iframe{display:block;width:100%;height:967px;border:none;}
-.form__micro{padding:0 var(--s4) var(--s4);text-align:center;color:var(--grey);}
+.form{margin-top:var(--s3);display:grid;grid-template-columns:1fr 1fr;gap:var(--s2);}
+.field{display:flex;flex-direction:column;gap:var(--s1);}
+.field--full{grid-column:1 / -1;}
+.field label{font-size:var(--f-label);font-weight:600;line-height:1;letter-spacing:0.2px;color:var(--navy);}
+.field input,.field select{
+  height:48px;
+  width:100%;
+  font-family:inherit;
+  font-size:16px;
+  color:var(--navy);
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:var(--r-input);
+  padding:0 var(--s2);
+  transition:border-color 150ms ease;
+}
+.field input:focus,.field select:focus{border-color:var(--blue);}
+.consent{grid-column:1 / -1;display:flex;align-items:flex-start;gap:12px;margin-top:0;}
+.consent input{width:18px;height:18px;flex:none;margin:0;margin-top:2px;accent-color:var(--blue);}
+.consent label{font-size:var(--f-small);line-height:1.5;color:var(--grey);}
+.form__submit{grid-column:1 / -1;display:flex;flex-direction:column;gap:12px;}
+.form__micro{text-align:center;color:var(--grey);}
 
 /* ============================================================
    S3 — PROOF BAR · blue
@@ -334,8 +344,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
   .hero__grid{grid-template-columns:1fr;gap:var(--s5);}
   .hero__btn-mobile{display:block;margin-top:var(--s3);}
   .hero__sub{max-width:none;}
-  .form-card__head{padding:var(--s3) var(--s3) 0;}
-  .form__micro{padding:0 var(--s3) var(--s3);}
+  .form-card{padding:var(--s3);}
   .form{grid-template-columns:1fr;}
 
   .proof__grid{grid-template-columns:1fr 1fr;row-gap:var(--s4);}
@@ -404,34 +413,68 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
     </div>
 
     <div class="form-card" id="form">
-      <div class="form-card__head">
-        <h2 class="form-card__title">Start your Growth Readiness Score&trade;</h2>
-        <p class="small form-card__sub">Your details first, then fifteen quick questions. Your score appears the moment you finish.</p>
-      </div>
+      <h2 class="form-card__title">Start your Growth Readiness Score&trade;</h2>
+      <p class="small form-card__sub">Your details first, then fifteen quick questions. Your score appears the moment you finish.</p>
 
-      <!-- GoHighLevel form embed: "GRS - Contact Form".
-           Fields, labels, consent line and submit button are all configured
-           in GHL, not here. -->
-      <div class="form-embed">
-        <iframe
-          src="https://api.leadconnectorhq.com/widget/form/J2XYyrYTQatuL51EN4xi"
-          id="inline-J2XYyrYTQatuL51EN4xi"
-          data-layout="{'id':'INLINE'}"
-          data-trigger-type="alwaysShow"
-          data-trigger-value=""
-          data-activation-type="alwaysActivated"
-          data-activation-value=""
-          data-deactivation-type="neverDeactivate"
-          data-deactivation-value=""
-          data-form-name="GRS - Contact Form"
-          data-height="967"
-          data-layout-iframe-id="inline-J2XYyrYTQatuL51EN4xi"
-          data-form-id="J2XYyrYTQatuL51EN4xi"
-          title="GRS - Contact Form">
-        </iframe>
-      </div>
+      <form class="form" action="#" method="post" novalidate>
+        <div class="field">
+          <label for="first-name">First Name</label>
+          <input id="first-name" name="first-name" type="text" autocomplete="given-name" required>
+        </div>
+        <div class="field">
+          <label for="last-name">Last Name</label>
+          <input id="last-name" name="last-name" type="text" autocomplete="family-name" required>
+        </div>
 
-      <p class="small form__micro">Takes about five minutes. Your details stay with us and are never sold.</p>
+        <div class="field field--full">
+          <label for="email">Work Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required>
+        </div>
+
+        <div class="field field--full">
+          <label for="mobile">Mobile Number</label>
+          <input id="mobile" name="mobile" type="tel" autocomplete="tel" required>
+        </div>
+
+        <div class="field field--full">
+          <label for="business">Business Name</label>
+          <input id="business" name="business" type="text" autocomplete="organization" required>
+        </div>
+
+        <div class="field">
+          <label for="position">Your Position</label>
+          <input id="position" name="position" type="text" autocomplete="organization-title" required>
+        </div>
+        <div class="field">
+          <label for="industry">Industry</label>
+          <!-- OPTION LIST NOT SUPPLIED IN THE COPY DECK — add before build -->
+          <select id="industry" name="industry" required>
+            <option value="">Please select</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="employees">Number of Employees</label>
+          <!-- OPTION LIST NOT SUPPLIED IN THE COPY DECK — add before build -->
+          <select id="employees" name="employees" required>
+            <option value="">Please select</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="location">Business Location</label>
+          <input id="location" name="location" type="text" autocomplete="address-level2" required>
+        </div>
+
+        <div class="consent">
+          <input id="consent" name="consent" type="checkbox" required>
+          <label for="consent">I agree to receive my Growth Readiness Score results and related communications from Rock Solid Automation by email and SMS. You can unsubscribe at any time.</label>
+        </div>
+
+        <div class="form__submit">
+          <button class="btn btn--block" type="submit">START MY GROWTH SCORE</button>
+          <p class="small form__micro">Takes about five minutes. Your details stay with us and are never sold.</p>
+        </div>
+      </form>
     </div>
 
   </div>
@@ -763,6 +806,5 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
   </div>
 </footer>
 
-<script src="https://link.msgsndr.com/js/form_embed.js"></script>
 </body>
 </html>
