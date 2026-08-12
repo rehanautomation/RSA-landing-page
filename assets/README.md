@@ -1,32 +1,41 @@
 # Assets
 
-Drop the logo files in here using the exact filenames below. The page already
-points at these paths, so nothing in `index.html` needs editing — overwrite the
-placeholder and refresh.
-
-| Filename | Where it appears | Displayed width | Needs to read against |
+| File | Used in | Displayed width | Rendered height |
 |---|---|---|---|
-| `logo.svg` | Header (Section 1) | 180px, 120px on mobile | White |
-| `logo-reversed.svg` | Footer (Section 10) | 160px | Navy `#002C46` |
+| `logo.png` | Header (Section 1) and Footer (Section 10) | 180px header, 120px on mobile, 160px footer | 50px / 33px / 45px |
 
-## Why two files
+Source file is 506 × 141px, RGBA with a transparent background.
 
-The footer sits on a navy band. A dark logo disappears against it, so the
-footer needs a reversed (white or light) version. If your logo is already
-light, or has a version that works on both, copy the same file to both names.
+## The footer logo is filtered white
 
-## Format
+The wordmark "ROCK SOLID" and the "POWERED BY ROCK SOLID AI" strapline are
+dark navy. On the navy footer band they disappear completely, leaving only the
+mountain and the word "Automation" floating on their own.
 
-SVG is preferred — it stays sharp at any size and on any screen. PNG at 2×
-the displayed width works too (360px wide for the header, 320px for the
-footer), on a transparent background.
+The footer therefore renders the same file as solid white using a CSS filter:
 
-If you supply PNG or JPG instead of SVG, update the two `src` attributes in
-`index.html` to match the new extension. Search for `assets/logo` to find them.
+```css
+.footer__logo{ filter: brightness(0) invert(1); }
+```
 
-## Height
+That is legible and clean, but it flattens the blue mountain accent to white.
+If a proper reversed logo is supplied, save it as `logo-reversed.png`, point
+the footer `<img>` at it, and delete the filter rule from `.footer__logo`.
 
-Height is set automatically from your file's own proportions, so a taller or
-shorter logo will not be squashed. Only the width is fixed. The header band is
-80px tall, so keep the header logo under roughly 48px of visual height at
-180px wide, or it will crowd the band.
+In GoHighLevel, upload a white version to the media library rather than
+relying on a filter.
+
+## Replacing the logo
+
+Overwrite `logo.png`, keeping the filename, and update the `width` and
+`height` attributes on both `<img>` tags in `index.html` to the new file's
+real pixel dimensions. Those attributes only reserve the correct space while
+the image loads; displayed size is set in CSS and height stays automatic, so
+a different aspect ratio will not be squashed.
+
+The header band is 80px tall. At 180px wide the current logo renders 50px
+tall, which fits with room to spare. A much taller logo would crowd it.
+
+SVG is preferred over PNG if a vector version exists — it stays sharp on
+high-density screens at any size. If switching to SVG, update the `src`
+extension in both places and drop the `width`/`height` attributes.

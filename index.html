@@ -297,7 +297,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
 .footer{padding:var(--s6) 0;}
 .footer__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s5);}
 .footer__grid,.footer__bottom{font-size:var(--f-small);line-height:1.7;color:var(--border);}
-.footer__logo{width:160px;}
+.footer__logo{width:160px;filter:brightness(0) invert(1);}
 .footer__blurb{margin-top:var(--s2);}
 .footer__partner{color:var(--lightblue);}
 .footer__divider{height:1px;background:rgba(109,110,112,0.5);margin-top:var(--s5);}
@@ -348,8 +348,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
      ============================================================ -->
 <header class="header">
   <div class="wrap header__inner">
-    <!-- Drop the real logo in at assets/logo.svg, keeping the filename. See assets/README.md -->
-    <img class="header__logo" src="assets/logo.svg" alt="Rock Solid Automation">
+    <img class="header__logo" src="assets/logo.png" width="506" height="141" alt="Rock Solid Automation">
     <a class="header__phone" href="tel:+61423505938">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
       0423 505 938
@@ -721,8 +720,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
     <div class="footer__grid">
 
       <div>
-        <!-- Reversed logo for the navy band. Drop it in at assets/logo-reversed.svg -->
-        <img class="footer__logo" src="assets/logo-reversed.svg" alt="Rock Solid Automation">
+        <!-- Same file, rendered white. The wordmark is navy and vanishes on this
+             band. Replace with a supplied white version when one exists, and
+             drop the .footer__logo filter rule. -->
+        <img class="footer__logo" src="assets/logo.png" width="506" height="141" alt="Rock Solid Automation">
         <p class="footer__blurb">Rock Solid Automation</p>
         <p class="footer__partner">Business Growth Partner</p>
       </div>
