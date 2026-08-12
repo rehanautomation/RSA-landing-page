@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>[[PAGE TITLE — from copy deck: GRS landing page meta title]]</title>
+<meta name="description" content="[[META DESCRIPTION — from copy deck, ~155 characters]]">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   1. DESIGN TOKENS
+   ============================================================ */
+:root{
+  /* 1.1 Colour */
+  --navy:#002C46;
+  --blue:#3384B5;
+  --blue-hover:#2A6F99;
+  --royal:#3155A6;
+  --midblue:#4575BB;
+  --lightblue:#5397BD;
+  --grey:#6D6E70;
+  --border:#D1D3D4;
+  --wash:#F4F6F8;
+  --white:#FFFFFF;
+  --on-navy:rgba(255,255,255,0.85);
+  --shadow-card:0 4px 16px rgba(0,44,70,0.08);
+
+  /* 1.2 Typography */
+  --f-h1:52px;   --f-h2:38px;   --f-h3:22px;
+  --f-body:18px; --f-body-lg:20px; --f-small:15px;
+  --f-eyebrow:14px; --f-stat:44px; --f-stat-label:14px;
+  --f-btn:17px; --f-label:14px; --f-step:56px;
+
+  /* 1.3 Spacing */
+  --s1:8px; --s2:16px; --s3:24px; --s4:32px; --s5:48px; --s6:64px; --s7:96px;
+  --band-y:96px;
+  --wrap:1140px;
+  --wrap-narrow:800px;
+
+  /* 1.4 Shape & depth */
+  --r-card:6px;
+  --r-btn:4px;
+  --r-input:4px;
+}
+
+/* ============================================================
+   2. RESET / BASE
+   ============================================================ */
+*,*::before,*::after{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:'Barlow',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;
+  font-size:var(--f-body);
+  font-weight:400;
+  line-height:1.6;
+  color:var(--navy);
+  background:var(--white);
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%;height:auto;}
+svg{display:block;flex:none;}
+h1,h2,h3,p,ul,figure{margin:0;}
+ul{padding:0;list-style:none;}
+
+/* ---- Bands ---- */
+.band{padding:var(--band-y) 0;}
+.band--white{background:var(--white);}
+.band--wash{background:var(--wash);}
+.band--navy{background:var(--navy);}
+.band--blue{background:var(--blue);}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--s3);}
+.wrap--narrow{max-width:calc(var(--wrap-narrow) + 48px);}
+
+/* ---- Type scale ---- */
+.h1{font-size:var(--f-h1);font-weight:700;line-height:1.1;letter-spacing:-0.5px;max-width:13ch;}
+.h2{font-size:var(--f-h2);font-weight:700;line-height:1.15;letter-spacing:-0.3px;max-width:24ch;}
+.h3{font-size:var(--f-h3);font-weight:600;line-height:1.3;}
+.body-lg{font-size:var(--f-body-lg);line-height:1.55;}
+.small{font-size:var(--f-small);line-height:1.5;}
+.eyebrow{font-size:var(--f-eyebrow);font-weight:600;line-height:1;letter-spacing:2px;text-transform:uppercase;}
+.stat{font-size:var(--f-stat);font-weight:700;line-height:1;letter-spacing:-0.5px;}
+.stat-label{font-size:var(--f-stat-label);font-weight:500;line-height:1.3;letter-spacing:1.5px;text-transform:uppercase;}
+.step-num{font-size:var(--f-step);font-weight:700;line-height:1;letter-spacing:-1px;color:var(--blue);}
+
+.t-navy{color:var(--navy);}
+.t-grey{color:var(--grey);}
+.t-white{color:var(--white);}
+.t-blue{color:var(--blue);}
+.t-lightblue{color:var(--lightblue);}
+.t-onnavy{color:var(--on-navy);}
+.t-border{color:var(--border);}
+.center{text-align:center;margin-left:auto;margin-right:auto;}
+
+/* ---- Heading block ---- */
+.head-block{text-align:center;}
+.head-block .h2{max-width:24ch;margin:0 auto;}
+.head-block .intro{max-width:760px;margin:var(--s2) auto 0;color:var(--grey);}
+.head-block .h2--spaced{margin-top:var(--s2);}
+.head-block .intro--narrow{max-width:740px;}
+
+/* ============================================================
+   1.5 SCORE-SCALE MOTIF (signature — 3 placements only)
+   ============================================================ */
+.scale{display:flex;gap:4px;}
+.scale span{width:72px;height:6px;border-radius:3px;}
+.scale span:nth-child(1){background:var(--blue);}
+.scale span:nth-child(2){background:var(--royal);}
+.scale span:nth-child(3){background:var(--midblue);}
+.scale span:nth-child(4){background:var(--lightblue);}
+.scale--card span{width:48px;height:5px;}
+.scale--center{justify-content:center;}
+.scale--invert span{background:var(--white);}
+.scale--invert span:nth-child(1){opacity:0.4;}
+.scale--invert span:nth-child(2){opacity:0.6;}
+.scale--invert span:nth-child(3){opacity:0.8;}
+.scale--invert span:nth-child(4){opacity:1;}
+
+/* ============================================================
+   2. BUTTONS / LINKS / FOCUS
+   ============================================================ */
+.btn{
+  display:inline-block;
+  font-family:inherit;
+  font-size:var(--f-btn);
+  font-weight:600;
+  line-height:1;
+  letter-spacing:0.3px;
+  text-transform:uppercase;
+  text-decoration:none;
+  text-align:center;
+  padding:18px 40px;
+  border:0;
+  border-radius:var(--r-btn);
+  background:var(--blue);
+  color:var(--white);
+  cursor:pointer;
+  transition:background-color 150ms ease;
+}
+.btn:hover{background:var(--blue-hover);}
+.btn--block{display:block;width:100%;}
+.btn--invert{background:var(--white);color:var(--navy);}
+.btn--invert:hover{background:var(--wash);}
+
+.link{color:var(--border);text-decoration:underline;transition:color 150ms ease;}
+.link:hover{color:var(--white);}
+
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{
+  outline:2px solid var(--lightblue);
+  outline-offset:2px;
+}
+
+/* ============================================================
+   S1 — HEADER · white
+   ============================================================ */
+.header{background:var(--white);border-bottom:1px solid var(--border);}
+.header__inner{height:80px;display:flex;align-items:center;justify-content:space-between;gap:var(--s3);}
+.header__logo{width:180px;}
+.header__phone{display:flex;align-items:center;gap:var(--s1);color:var(--navy);font-size:17px;font-weight:600;text-decoration:none;}
+.header__phone svg{color:var(--blue);}
+
+/* ============================================================
+   S2 — HERO · navy
+   ============================================================ */
+.hero__grid{display:grid;grid-template-columns:55% 45%;gap:var(--s5);align-items:start;}
+.hero__sub{max-width:520px;margin-top:var(--s3);}
+.hero .scale{margin-top:var(--s3);}
+.hero__h1{margin-top:var(--s2);}
+.hero__ticks{margin-top:var(--s4);display:flex;flex-direction:column;gap:12px;}
+.hero__ticks li{display:flex;align-items:flex-start;gap:12px;color:var(--white);font-size:17px;line-height:1.5;}
+.hero__ticks svg{color:var(--lightblue);margin-top:3px;}
+.hero__micro{margin-top:var(--s3);color:var(--border);}
+.hero__btn-mobile{display:none;}
+
+/* Form card — the single shadow exception */
+.form-card{
+  background:var(--white);
+  border-radius:var(--r-card);
+  padding:40px;
+  box-shadow:0 8px 32px rgba(0,0,0,0.25);
+}
+.form-card__title{font-size:24px;font-weight:600;line-height:1.3;color:var(--navy);}
+.form-card__sub{margin-top:var(--s1);color:var(--grey);}
+.form{margin-top:var(--s3);display:grid;grid-template-columns:1fr 1fr;gap:var(--s2);}
+.field{display:flex;flex-direction:column;gap:var(--s1);}
+.field--full{grid-column:1 / -1;}
+.field label{font-size:var(--f-label);font-weight:600;line-height:1;letter-spacing:0.2px;color:var(--navy);}
+.field input,.field select{
+  height:48px;
+  width:100%;
+  font-family:inherit;
+  font-size:16px;
+  color:var(--navy);
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:var(--r-input);
+  padding:0 var(--s2);
+  transition:border-color 150ms ease;
+}
+.field input:focus,.field select:focus{border-color:var(--blue);}
+.consent{grid-column:1 / -1;display:flex;align-items:flex-start;gap:12px;margin-top:0;}
+.consent input{width:18px;height:18px;flex:none;margin:0;margin-top:2px;accent-color:var(--blue);}
+.consent label{font-size:var(--f-small);line-height:1.5;color:var(--grey);}
+.form__submit{grid-column:1 / -1;display:flex;flex-direction:column;gap:12px;}
+.form__micro{text-align:center;color:var(--grey);}
+
+/* ============================================================
+   S3 — PROOF BAR · blue
+   ============================================================ */
+.proof{padding:56px 0;}
+.proof__grid{display:grid;grid-template-columns:repeat(4,1fr);}
+.proof__cell{text-align:center;padding:0 var(--s3);}
+.proof__cell + .proof__cell{border-left:1px solid rgba(255,255,255,0.25);}
+.proof__cell .stat{color:var(--white);}
+.proof__cell .stat-label{margin-top:var(--s1);color:rgba(255,255,255,0.75);}
+
+/* ============================================================
+   S4 — THE PROBLEM · white
+   ============================================================ */
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s3);margin-top:var(--s5);}
+.card{border-radius:var(--r-card);padding:var(--s4);}
+.card--bordered{background:var(--white);border:1px solid var(--border);}
+.card--shadow{background:var(--white);box-shadow:var(--shadow-card);}
+.card__icon{color:var(--blue);}
+.card .h3{margin-top:20px;color:var(--navy);}
+.card__body{margin-top:12px;font-size:17px;color:var(--grey);}
+.closing{margin-top:var(--s5);text-align:center;font-size:19px;font-weight:600;color:var(--navy);max-width:66ch;margin-left:auto;margin-right:auto;}
+
+/* ============================================================
+   S5 — WHAT YOU GET · wash
+   ============================================================ */
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--s3);margin-top:var(--s5);}
+.card--shadow .h3{margin-top:0;}
+.card__scale{margin-top:12px;}
+.card--shadow .card__scale + .card__body{margin-top:12px;}
+
+/* ============================================================
+   S6 — HOW IT WORKS · white
+   ============================================================ */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s4);margin-top:var(--s5);}
+.step .h3{margin-top:var(--s2);color:var(--navy);}
+.step__body{margin-top:12px;font-size:17px;color:var(--grey);}
+.steps-note{margin-top:var(--s5);text-align:center;font-size:17px;color:var(--grey);max-width:66ch;margin-left:auto;margin-right:auto;}
+
+/* ============================================================
+   S7 — WHY THIS IS DIFFERENT · navy
+   ============================================================ */
+.diff__grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--s5);align-items:start;}
+.diff__h2{margin-top:var(--s2);max-width:22ch;color:var(--white);}
+.diff__copy{margin-top:var(--s3);display:flex;flex-direction:column;gap:var(--s2);color:var(--on-navy);}
+.card--navy{background:transparent;border:1px solid var(--blue);border-radius:var(--r-card);padding:36px;}
+.card--navy__title{font-size:20px;font-weight:600;line-height:1.3;color:var(--white);}
+.not-list{margin-top:var(--s3);display:flex;flex-direction:column;gap:10px;}
+.not-list li{display:flex;align-items:flex-start;gap:12px;font-size:17px;line-height:1.5;color:var(--border);}
+.not-list svg{color:var(--grey);margin-top:5px;}
+.card--navy__divider{height:1px;background:rgba(51,132,181,0.4);margin:var(--s3) 0;}
+.are-row{display:flex;align-items:flex-start;gap:12px;}
+.are-row svg{color:var(--lightblue);margin-top:3px;}
+.are-row span{font-size:19px;font-weight:600;line-height:1.4;color:var(--white);}
+.card--navy__close{margin-top:var(--s3);font-size:16px;line-height:1.5;font-style:italic;color:var(--border);}
+
+/* ============================================================
+   S8 — FAQ · white
+   ============================================================ */
+.faq{max-width:var(--wrap-narrow);margin:var(--s5) auto 0;}
+.faq__item{border-bottom:1px solid var(--border);}
+.faq__q{
+  display:flex;align-items:center;justify-content:space-between;gap:var(--s3);
+  padding:var(--s3) 0;
+  font-size:18px;font-weight:600;line-height:1.4;color:var(--navy);
+  cursor:pointer;list-style:none;
+}
+.faq__q::-webkit-details-marker{display:none;}
+.faq__q svg{color:var(--grey);transition:transform 150ms ease;}
+.faq__item[open] .faq__q svg{transform:rotate(180deg);}
+.faq__a{padding:0 0 var(--s3) 0;color:var(--grey);max-width:70ch;}
+
+/* ============================================================
+   S9 — FINAL CTA · blue
+   ============================================================ */
+.final{text-align:center;}
+.final__inner{max-width:760px;margin:0 auto;}
+.final .h2{margin:var(--s3) auto 0;color:var(--white);}
+.final__body{margin-top:var(--s2);font-size:19px;line-height:1.55;color:rgba(255,255,255,0.9);}
+.final .btn{margin-top:var(--s4);}
+.final__micro{margin-top:var(--s2);color:rgba(255,255,255,0.75);}
+
+/* ============================================================
+   S10 — FOOTER · navy
+   ============================================================ */
+.footer{padding:var(--s6) 0;}
+.footer__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s5);}
+.footer__grid,.footer__bottom{font-size:var(--f-small);line-height:1.7;color:var(--border);}
+.footer__logo{width:160px;}
+.footer__partner{margin-top:var(--s2);color:var(--lightblue);}
+.footer__blurb{margin-top:var(--s2);}
+.footer__label{color:var(--grey);}
+.footer__divider{height:1px;background:rgba(109,110,112,0.5);margin-top:var(--s5);}
+.footer__bottom{margin-top:var(--s3);text-align:center;font-size:14px;color:var(--grey);}
+
+/* ============================================================
+   3. BREAKPOINT — 768px (the only one)
+   ============================================================ */
+@media (max-width:768px){
+  :root{
+    --f-h1:34px; --f-h2:28px; --f-h3:20px;
+    --f-body:17px; --f-body-lg:18px; --f-small:14px;
+    --f-eyebrow:13px; --f-stat:32px; --f-stat-label:13px;
+    --f-label:14px; --f-step:40px;
+    --band-y:56px;
+  }
+  .h1{max-width:none;}
+  .scale span{width:48px;height:5px;}
+  .btn{display:block;width:100%;}
+
+  .header__inner{gap:var(--s2);}
+  .header__logo{width:120px;}
+
+  .hero__grid{grid-template-columns:1fr;gap:var(--s5);}
+  .hero__btn-mobile{display:block;margin-top:var(--s3);}
+  .hero__sub{max-width:none;}
+  .form-card{padding:var(--s3);}
+  .form{grid-template-columns:1fr;}
+
+  .proof__grid{grid-template-columns:1fr 1fr;row-gap:var(--s4);}
+  .proof__cell + .proof__cell{border-left:0;}
+
+  .grid-3,.grid-2{grid-template-columns:1fr;}
+  .steps{grid-template-columns:1fr;gap:40px;}
+  .diff__grid{grid-template-columns:1fr;gap:var(--s5);}
+  .diff__h2{max-width:none;}
+  .card--navy{padding:var(--s3);}
+  .footer__grid{grid-template-columns:1fr;gap:var(--s4);}
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     S1 — HEADER · white
+     ============================================================ -->
+<header class="header">
+  <div class="wrap header__inner">
+    <!-- PLACEHOLDER LOGO — replace src with the Rock Solid Automation logo asset, 180px wide -->
+    <img class="header__logo" alt="[[LOGO — Rock Solid Automation]]"
+         src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='40'%3E%3Crect width='179' height='39' x='.5' y='.5' fill='none' stroke='%23D1D3D4'/%3E%3Ctext x='90' y='24' font-family='Barlow, sans-serif' font-size='11' letter-spacing='1.5' fill='%236D6E70' text-anchor='middle'%3ELOGO PLACEHOLDER%3C/text%3E%3C/svg%3E">
+    <a class="header__phone" href="tel:+61423505938">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      0423 505 938
+    </a>
+  </div>
+</header>
+
+<!-- ============================================================
+     S2 — HERO · navy
+     ============================================================ -->
+<section class="band band--navy hero">
+  <div class="wrap hero__grid">
+
+    <div class="hero__text">
+      <p class="eyebrow t-lightblue">[[EYEBROW — from copy deck, uppercase]]</p>
+      <h1 class="h1 t-white hero__h1">[[H1 — hero headline from copy deck, verbatim]]</h1>
+
+      <!-- SCORE-SCALE MOTIF · placement 1 of 3 -->
+      <div class="scale" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+
+      <p class="body-lg t-onnavy hero__sub">[[HERO SUBHEAD — from copy deck, verbatim. One or two sentences.]]</p>
+
+      <ul class="hero__ticks">
+        <li>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>[[TRUST TICK 1 — from copy deck]]</span>
+        </li>
+        <li>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>[[TRUST TICK 2 — from copy deck]]</span>
+        </li>
+        <li>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>[[TRUST TICK 3 — from copy deck]]</span>
+        </li>
+      </ul>
+
+      <p class="small hero__micro">[[HERO MICRO-LINE — from copy deck, e.g. time-to-complete / no-obligation note]]</p>
+
+      <!-- Mobile-only CTA: the form falls below the fold on small screens -->
+      <a class="btn hero__btn-mobile" href="#form">[[CTA BUTTON LABEL — identical on all three buttons]]</a>
+    </div>
+
+    <div class="form-card" id="form">
+      <h2 class="form-card__title">[[FORM CARD HEADING — from copy deck]]</h2>
+      <p class="small form-card__sub">[[FORM CARD SUBHEAD — from copy deck]]</p>
+
+      <!-- Field layout below follows the Half/Full pattern in the copy deck.
+           Confirm field names/labels against the deck before handoff to GHL. -->
+      <form class="form" action="#" method="post" novalidate>
+        <div class="field">
+          <label for="first-name">[[FIELD LABEL — First name]]</label>
+          <input id="first-name" name="first-name" type="text" autocomplete="given-name">
+        </div>
+        <div class="field">
+          <label for="last-name">[[FIELD LABEL — Last name]]</label>
+          <input id="last-name" name="last-name" type="text" autocomplete="family-name">
+        </div>
+        <div class="field field--full">
+          <label for="business">[[FIELD LABEL — Business name]]</label>
+          <input id="business" name="business" type="text" autocomplete="organization">
+        </div>
+        <div class="field">
+          <label for="email">[[FIELD LABEL — Email]]</label>
+          <input id="email" name="email" type="email" autocomplete="email">
+        </div>
+        <div class="field">
+          <label for="phone">[[FIELD LABEL — Phone]]</label>
+          <input id="phone" name="phone" type="tel" autocomplete="tel">
+        </div>
+
+        <div class="consent">
+          <input id="consent" name="consent" type="checkbox">
+          <label for="consent">[[CONSENT LINE — from copy deck, verbatim]]</label>
+        </div>
+
+        <div class="form__submit">
+          <button class="btn btn--block" type="submit">[[CTA BUTTON LABEL — identical on all three buttons]]</button>
+          <p class="small form__micro">[[UNDER-BUTTON MICRO-COPY — from copy deck]]</p>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     S3 — PROOF BAR · blue
+     ============================================================ -->
+<section class="band--blue proof">
+  <div class="wrap proof__grid">
+    <div class="proof__cell">
+      <p class="stat">[[STAT 1]]</p>
+      <p class="stat-label">[[STAT LABEL 1]]</p>
+    </div>
+    <div class="proof__cell">
+      <p class="stat">[[STAT 2]]</p>
+      <p class="stat-label">[[STAT LABEL 2]]</p>
+    </div>
+    <div class="proof__cell">
+      <p class="stat">[[STAT 3]]</p>
+      <p class="stat-label">[[STAT LABEL 3]]</p>
+    </div>
+    <div class="proof__cell">
+      <p class="stat">[[STAT 4]]</p>
+      <p class="stat-label">[[STAT LABEL 4]]</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     S4 — THE PROBLEM · white
+     ============================================================ -->
+<section class="band band--white">
+  <div class="wrap">
+    <div class="head-block">
+      <h2 class="h2 t-navy">[[S4 H2 — the problem headline]]</h2>
+      <p class="intro">[[S4 INTRO — one or two sentences, from copy deck]]</p>
+    </div>
+
+    <div class="grid-3">
+      <article class="card card--bordered">
+        <svg class="card__icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="23" y1="1" x2="17" y2="7"/><line x1="17" y1="1" x2="23" y2="7"/><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <h3 class="h3">[[S4 CARD 1 HEADING]]</h3>
+        <p class="card__body">[[S4 CARD 1 BODY — from copy deck]]</p>
+      </article>
+
+      <article class="card card--bordered">
+        <svg class="card__icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        <h3 class="h3">[[S4 CARD 2 HEADING]]</h3>
+        <p class="card__body">[[S4 CARD 2 BODY — from copy deck]]</p>
+      </article>
+
+      <article class="card card--bordered">
+        <svg class="card__icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+        <h3 class="h3">[[S4 CARD 3 HEADING]]</h3>
+        <p class="card__body">[[S4 CARD 3 BODY — from copy deck]]</p>
+      </article>
+    </div>
+
+    <p class="closing">[[S4 CLOSING LINE — from copy deck]]</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     S5 — WHAT YOU GET · wash
+     ============================================================ -->
+<section class="band band--wash">
+  <div class="wrap">
+    <div class="head-block">
+      <p class="eyebrow t-blue">[[S5 EYEBROW]]</p>
+      <h2 class="h2 t-navy h2--spaced">[[S5 H2 — what you get headline]]</h2>
+      <p class="intro intro--narrow">[[S5 INTRO — from copy deck]]</p>
+    </div>
+
+    <div class="grid-2">
+      <article class="card card--shadow">
+        <h3 class="h3 t-navy">[[S5 CARD 1 HEADING]]</h3>
+        <p class="card__body">[[S5 CARD 1 BODY — from copy deck]]</p>
+      </article>
+
+      <article class="card card--shadow">
+        <h3 class="h3 t-navy">Your readiness level</h3>
+        <!-- SCORE-SCALE MOTIF · placement 2 of 3 (card scale) -->
+        <div class="scale scale--card card__scale" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+        <p class="card__body">[[S5 CARD 2 BODY — the four bands: Restricted, Developing, Capable, Ready. Use copy deck wording verbatim.]]</p>
+      </article>
+
+      <article class="card card--shadow">
+        <h3 class="h3 t-navy">[[S5 CARD 3 HEADING]]</h3>
+        <p class="card__body">[[S5 CARD 3 BODY — from copy deck]]</p>
+      </article>
+
+      <article class="card card--shadow">
+        <h3 class="h3 t-navy">[[S5 CARD 4 HEADING]]</h3>
+        <p class="card__body">[[S5 CARD 4 BODY — from copy deck]]</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     S6 — HOW IT WORKS · white
+     ============================================================ -->
+<section class="band band--white">
+  <div class="wrap">
+    <div class="head-block">
+      <h2 class="h2 t-navy">[[S6 H2 — how it works headline]]</h2>
+    </div>
+
+    <div class="steps">
+      <article class="step">
+        <p class="step-num">01</p>
+        <h3 class="h3">[[S6 STEP 1 HEADING]]</h3>
+        <p class="step__body">[[S6 STEP 1 BODY — from copy deck]]</p>
+      </article>
+      <article class="step">
+        <p class="step-num">02</p>
+        <h3 class="h3">[[S6 STEP 2 HEADING]]</h3>
+        <p class="step__body">[[S6 STEP 2 BODY — from copy deck]]</p>
+      </article>
+      <article class="step">
+        <p class="step-num">03</p>
+        <h3 class="h3">[[S6 STEP 3 HEADING]]</h3>
+        <p class="step__body">[[S6 STEP 3 BODY — from copy deck]]</p>
+      </article>
+    </div>
+
+    <p class="steps-note">[[S6 LINE BENEATH STEPS — from copy deck]]</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     S7 — WHY THIS IS DIFFERENT · navy
+     ============================================================ -->
+<section class="band band--navy">
+  <div class="wrap diff__grid">
+
+    <div>
+      <p class="eyebrow t-lightblue">[[S7 EYEBROW]]</p>
+      <h2 class="h2 diff__h2">[[S7 H2 — why this is different]]</h2>
+      <div class="diff__copy">
+        <p>[[S7 PARAGRAPH 1 — from copy deck]]</p>
+        <p>[[S7 PARAGRAPH 2 — from copy deck]]</p>
+        <p>[[S7 PARAGRAPH 3 — from copy deck]]</p>
+      </div>
+    </div>
+
+    <div class="card--navy">
+      <p class="card--navy__title">[[S7 CARD HEADING — e.g. the "we are not" framing line]]</p>
+
+      <ul class="not-list">
+        <li>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          <span>[[WE ARE NOT — item 1]]</span>
+        </li>
+        <li>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          <span>[[WE ARE NOT — item 2]]</span>
+        </li>
+        <li>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          <span>[[WE ARE NOT — item 3]]</span>
+        </li>
+        <li>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          <span>[[WE ARE NOT — item 4]]</span>
+        </li>
+        <li>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          <span>[[WE ARE NOT — item 5]]</span>
+        </li>
+      </ul>
+
+      <div class="card--navy__divider"></div>
+
+      <div class="are-row">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+        <span>A Business Growth Partner</span>
+      </div>
+
+      <p class="card--navy__close">[[S7 CLOSING LINE — the single italic line in the copy deck]]</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     S8 — FAQ · white
+     ============================================================ -->
+<section class="band band--white">
+  <div class="wrap">
+    <div class="head-block">
+      <h2 class="h2 t-navy">[[S8 H2 — FAQ headline]]</h2>
+    </div>
+
+    <div class="faq">
+      <details class="faq__item" open>
+        <summary class="faq__q">
+          [[FAQ QUESTION 1]]
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </summary>
+        <p class="faq__a">[[FAQ ANSWER 1 — from copy deck]]</p>
+      </details>
+
+      <details class="faq__item">
+        <summary class="faq__q">
+          [[FAQ QUESTION 2]]
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </summary>
+        <p class="faq__a">[[FAQ ANSWER 2 — from copy deck]]</p>
+      </details>
+
+      <details class="faq__item">
+        <summary class="faq__q">
+          [[FAQ QUESTION 3]]
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </summary>
+        <p class="faq__a">[[FAQ ANSWER 3 — from copy deck]]</p>
+      </details>
+
+      <details class="faq__item">
+        <summary class="faq__q">
+          [[FAQ QUESTION 4]]
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </summary>
+        <p class="faq__a">[[FAQ ANSWER 4 — from copy deck]]</p>
+      </details>
+
+      <details class="faq__item">
+        <summary class="faq__q">
+          [[FAQ QUESTION 5]]
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </summary>
+        <p class="faq__a">[[FAQ ANSWER 5 — from copy deck]]</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     S9 — FINAL CTA · blue
+     ============================================================ -->
+<section class="band band--blue final">
+  <div class="wrap">
+    <div class="final__inner">
+      <!-- SCORE-SCALE MOTIF · placement 3 of 3 (white opacity ramp) -->
+      <div class="scale scale--center scale--invert" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+
+      <h2 class="h2">[[S9 H2 — final CTA headline]]</h2>
+      <p class="final__body">[[S9 BODY — from copy deck]]</p>
+      <a class="btn btn--invert" href="#form">[[CTA BUTTON LABEL — identical on all three buttons]]</a>
+      <p class="small final__micro">[[S9 MICRO-LINE — from copy deck]]</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     S10 — FOOTER · navy
+     ============================================================ -->
+<footer class="band--navy footer">
+  <div class="wrap">
+    <div class="footer__grid">
+
+      <div>
+        <!-- PLACEHOLDER LOGO — replace src with the Rock Solid Automation reversed logo, 160px wide -->
+        <img class="footer__logo" alt="[[LOGO — Rock Solid Automation]]"
+             src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='36'%3E%3Crect width='159' height='35' x='.5' y='.5' fill='none' stroke='%236D6E70'/%3E%3Ctext x='80' y='22' font-family='Barlow, sans-serif' font-size='10' letter-spacing='1.5' fill='%23D1D3D4' text-anchor='middle'%3ELOGO PLACEHOLDER%3C/text%3E%3C/svg%3E">
+        <p class="footer__partner">Business Growth Partner</p>
+        <p class="footer__blurb">[[FOOTER BLURB — one or two lines from copy deck]]</p>
+      </div>
+
+      <div>
+        <p class="footer__label">[[FOOTER COLUMN 2 LABEL — e.g. Contact]]</p>
+        <p>0423 505 938</p>
+        <p>[[FOOTER EMAIL ADDRESS]]</p>
+        <p>[[FOOTER LOCATION / SERVICE AREA]]</p>
+      </div>
+
+      <div>
+        <p class="footer__label">[[FOOTER COLUMN 3 LABEL — e.g. Legal]]</p>
+        <p>[[ABN OR BUSINESS DETAILS]]</p>
+        <p><a class="link" href="#">Privacy Policy</a></p>
+      </div>
+
+    </div>
+
+    <div class="footer__divider"></div>
+
+    <p class="footer__bottom">© [[YEAR]] [[LEGAL ENTITY NAME]]. [[RIGHTS LINE]] · <a class="link" href="#">Privacy Policy</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
