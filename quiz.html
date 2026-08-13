@@ -110,22 +110,6 @@ a:focus-visible{outline:2px solid var(--lightblue);outline-offset:2px;}
 .quiz__progress{margin-bottom:var(--s3);text-align:center;color:var(--grey);}
 .quiz__micro{margin-top:var(--s3);text-align:center;color:var(--grey);}
 
-/* Placeholder standing in for the quiz embed. Delete this rule and the
-   .quiz__placeholder markup when the real embed is pasted in. */
-.quiz__placeholder{
-  min-height:480px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:var(--s4);
-  border:1px dashed var(--border);
-  border-radius:var(--r-card);
-  color:var(--grey);
-  font-size:var(--f-small);
-  line-height:1.6;
-}
-
 /* ============================================================
    S4 — REASSURANCE STRIP · white
    ============================================================ */
@@ -150,7 +134,7 @@ a:focus-visible{outline:2px solid var(--lightblue);outline-offset:2px;}
 @media (max-width:768px){
   :root{--f-h2-ctx:24px;--f-body:17px;--f-small:14px;--f-eyebrow:13px;}
   .quiz__card{padding:var(--s4) 20px;}
-  .quiz__embed,.quiz__embed iframe,.quiz__placeholder{min-height:420px;}
+  .quiz__embed,.quiz__embed iframe{min-height:420px;}
   .scale span{width:48px;height:5px;}
   .reassure__list{flex-direction:column;gap:var(--s2);}
   .reassure__list li span{text-align:center;}
@@ -197,14 +181,11 @@ a:focus-visible{outline:2px solid var(--lightblue);outline-offset:2px;}
       <p class="small quiz__progress">Question 1 of 15</p>
       -->
 
+      <!-- GoHighLevel quiz embed. form_embed.js sets an inline height as the
+           visitor moves through the slides; the min-height in CSS is the floor
+           that stops the card shrinking between short questions. -->
       <div class="quiz__embed">
-        <!-- Paste the GoHighLevel quiz embed here, replacing this placeholder.
-             Keep width:100% and the min-height on .quiz__embed iframe. -->
-        <div class="quiz__placeholder">
-          [[QUIZ EMBED — paste the GoHighLevel quiz iframe here.<br>
-          Added via Integrate &rarr; embed inside the funnel step, not a custom HTML block.<br>
-          Quiz field and button styling must be entered in the Quiz Builder's own Custom CSS.]]
-        </div>
+        <iframe src="https://api.leadconnectorhq.com/widget/quiz/Sd2sEPS4szOyHHuNZU85" style="border:none;width:100%;" scrolling="no" id="Sd2sEPS4szOyHHuNZU85" title="quiz"></iframe>
       </div>
 
     </div>
@@ -247,5 +228,6 @@ a:focus-visible{outline:2px solid var(--lightblue);outline-offset:2px;}
   </div>
 </footer>
 
+<script src="https://link.msgsndr.com/js/form_embed.js"></script>
 </body>
 </html>
