@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Growth Readiness Score&trade; assessment | Rock Solid Automation</title>
+<meta name="description" content="Fifteen questions about how your business runs today. There are no right answers, only useful ones.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   TOKENS — identical to the landing page. No new values except
+   the two this page's spec names explicitly (context H2 size,
+   quiz card shadow), both marked below.
+   ============================================================ */
+:root{
+  --navy:#002C46;
+  --blue:#3384B5;
+  --royal:#3155A6;
+  --midblue:#4575BB;
+  --lightblue:#5397BD;
+  --grey:#6D6E70;
+  --border:#D1D3D4;
+  --wash:#F4F6F8;
+  --white:#FFFFFF;
+  --on-navy:rgba(255,255,255,0.85);
+
+  --f-h2-ctx:32px;   /* S2 only, per this page's spec */
+  --f-body:18px; --f-small:15px; --f-eyebrow:14px;
+
+  --s1:8px; --s2:16px; --s3:24px; --s4:32px; --s5:48px; --s6:64px;
+  --wrap:1140px;
+
+  --r-card:6px;
+}
+
+*,*::before,*::after{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family:'Barlow',-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;
+  font-size:var(--f-body);
+  font-weight:400;
+  line-height:1.6;
+  color:var(--navy);
+  background:var(--white);
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%;height:auto;}
+svg{display:block;flex:none;}
+h1,h2,p,ul{margin:0;}
+ul{padding:0;list-style:none;}
+
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--s3);}
+.eyebrow{font-size:var(--f-eyebrow);font-weight:600;line-height:1;letter-spacing:2px;text-transform:uppercase;}
+.small{font-size:var(--f-small);line-height:1.5;}
+
+a:focus-visible{outline:2px solid var(--lightblue);outline-offset:2px;}
+
+/* ---- Score-scale motif · one placement only (S2) ---- */
+.scale{display:flex;gap:4px;justify-content:center;}
+.scale span{width:72px;height:6px;border-radius:3px;}
+.scale span:nth-child(1){background:var(--blue);}
+.scale span:nth-child(2){background:var(--royal);}
+.scale span:nth-child(3){background:var(--midblue);}
+.scale span:nth-child(4){background:var(--lightblue);}
+
+/* ============================================================
+   S1 — HEADER · white
+   ============================================================ */
+.header{background:var(--white);border-bottom:1px solid var(--border);}
+.header__inner{height:72px;display:flex;align-items:center;justify-content:center;}
+/* Not a link. Every removed exit is the point of this page. */
+.header__logo{width:160px;}
+
+/* ============================================================
+   S2 — CONTEXT STRIP · navy
+   ============================================================ */
+.context{background:var(--navy);padding:var(--s5) 0;}
+.context__inner{max-width:720px;margin:0 auto;text-align:center;}
+.context__eyebrow{color:var(--lightblue);}
+.context__h2{
+  margin-top:var(--s2);
+  font-size:var(--f-h2-ctx);
+  font-weight:700;
+  line-height:1.15;
+  letter-spacing:-0.3px;
+  color:var(--white);
+}
+.context__sub{margin-top:var(--s2);font-size:17px;line-height:1.6;color:var(--on-navy);}
+.context .scale{margin-top:var(--s3);}
+
+/* ============================================================
+   S3 — QUIZ CONTAINER · wash
+   ============================================================ */
+.quiz{background:var(--wash);padding:var(--s6) 0;}
+.quiz__card{
+  max-width:760px;
+  margin:0 auto;
+  background:var(--white);
+  border-radius:var(--r-card);
+  padding:var(--s5) 40px;
+  box-shadow:0 4px 20px rgba(0,44,70,0.10);
+}
+/* Load-bearing: without a floor on the height, fifteen short slides make
+   the page pump on every click. */
+.quiz__embed{min-height:480px;}
+.quiz__embed iframe{display:block;width:100%;min-height:480px;border:none;background:transparent;}
+.quiz__progress{margin-bottom:var(--s3);text-align:center;color:var(--grey);}
+.quiz__micro{margin-top:var(--s3);text-align:center;color:var(--grey);}
+
+/* Placeholder standing in for the quiz embed. Delete this rule and the
+   .quiz__placeholder markup when the real embed is pasted in. */
+.quiz__placeholder{
+  min-height:480px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:var(--s4);
+  border:1px dashed var(--border);
+  border-radius:var(--r-card);
+  color:var(--grey);
+  font-size:var(--f-small);
+  line-height:1.6;
+}
+
+/* ============================================================
+   S4 — REASSURANCE STRIP · white
+   ============================================================ */
+.reassure{background:var(--white);padding:40px 0;}
+.reassure__list{display:flex;justify-content:center;align-items:center;gap:var(--s5);flex-wrap:wrap;}
+.reassure__list li{display:flex;align-items:center;justify-content:center;gap:var(--s1);font-size:16px;line-height:1.5;color:var(--grey);}
+.reassure__list svg{color:var(--blue);}
+
+/* ============================================================
+   S5 — FOOTER · navy
+   ============================================================ */
+.footer{background:var(--navy);padding:40px 0;text-align:center;}
+.footer__logo{width:140px;margin:0 auto;filter:brightness(0) invert(1);}
+.footer__line{margin-top:var(--s2);color:var(--border);}
+.footer__legal{margin-top:var(--s1);font-size:14px;line-height:1.5;color:var(--grey);}
+.footer__legal a{color:var(--grey);text-decoration:underline;transition:color 150ms ease;}
+.footer__legal a:hover{color:var(--white);}
+
+/* ============================================================
+   BREAKPOINT — 768px, the only one
+   ============================================================ */
+@media (max-width:768px){
+  :root{--f-h2-ctx:24px;--f-body:17px;--f-small:14px;--f-eyebrow:13px;}
+  .quiz__card{padding:var(--s4) 20px;}
+  .quiz__embed,.quiz__embed iframe,.quiz__placeholder{min-height:420px;}
+  .scale span{width:48px;height:5px;}
+  .reassure__list{flex-direction:column;gap:var(--s2);}
+  .reassure__list li span{text-align:center;}
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     S1 — HEADER · white
+     ============================================================ -->
+<header class="header">
+  <div class="wrap header__inner">
+    <img class="header__logo" src="assets/logo.png" width="506" height="141" alt="Rock Solid Automation">
+  </div>
+</header>
+
+<!-- ============================================================
+     S2 — CONTEXT STRIP · navy
+     ============================================================ -->
+<section class="context">
+  <div class="wrap">
+    <div class="context__inner">
+      <p class="eyebrow context__eyebrow">STEP 2 OF 2</p>
+      <h1 class="context__h2">Your assessment is ready.</h1>
+      <p class="context__sub">Fifteen questions about how your business runs today. There are no right answers, only useful ones. Answer honestly and your report will be worth reading.</p>
+
+      <!-- SCORE-SCALE MOTIF · the only placement on this page -->
+      <div class="scale" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     S3 — QUIZ CONTAINER · wash
+     ============================================================ -->
+<section class="quiz">
+  <div class="wrap">
+    <div class="quiz__card">
+
+      <!-- OPEN ITEM 2: the quiz supplies its own numbering. If its progress
+           indicator turns out to be weak or absent, uncomment the line below
+           rather than duplicating what the quiz already shows.
+      <p class="small quiz__progress">Question 1 of 15</p>
+      -->
+
+      <div class="quiz__embed">
+        <!-- Paste the GoHighLevel quiz embed here, replacing this placeholder.
+             Keep width:100% and the min-height on .quiz__embed iframe. -->
+        <div class="quiz__placeholder">
+          [[QUIZ EMBED — paste the GoHighLevel quiz iframe here.<br>
+          Added via Integrate &rarr; embed inside the funnel step, not a custom HTML block.<br>
+          Quiz field and button styling must be entered in the Quiz Builder's own Custom CSS.]]
+        </div>
+      </div>
+
+    </div>
+
+    <p class="small quiz__micro">Around five minutes to finish.</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     S4 — REASSURANCE STRIP · white
+     ============================================================ -->
+<section class="reassure">
+  <div class="wrap">
+    <ul class="reassure__list">
+      <li>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        <span>Your answers stay private</span>
+      </li>
+      <li>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        <span>Results appear instantly</span>
+      </li>
+      <li>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="18" y1="8" x2="23" y2="13"/><line x1="23" y1="8" x2="18" y2="13"/></svg>
+        <span>No sales call unless you ask for one</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================
+     S5 — FOOTER · navy
+     ============================================================ -->
+<footer class="footer">
+  <div class="wrap">
+    <img class="footer__logo" src="assets/logo.png" width="506" height="141" alt="Rock Solid Automation">
+    <p class="small footer__line">Rock Solid Automation · Mildura VIC</p>
+    <!-- OPEN ITEM 3: privacy policy URL still to be supplied -->
+    <p class="footer__legal">© 2026 Rock Solid Automation · <a href="#">Privacy Policy</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
